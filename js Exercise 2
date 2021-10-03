@@ -1,0 +1,29 @@
+//2 Arrays
+console.log(`Create 10 arrays of different elements and formats and use the different methods we talked about (length, push, unshift, splice) \n ------------------------------------------------------ \n`);
+
+console.log(`1. Array in Array \n ------------------`);
+
+const eastAfrican = ["Rwanda","Uganda",["Kigali" , "Bujumbura" , "Dodoma" , "Nairobi","Kampala"],"Burundi","Tanzania","Kenya"]
+
+//ARRAY Dispaly
+console.log(`Displaying all elements in array \n -----------------------------------`);
+console.log(eastAfrican);
+
+//Array length
+console.log(`\n (length) Displaying the array length \n ------------------------------------`);
+console.log(eastAfrican.length);
+
+//push adding the element at the end of the array
+console.log(`\n (push) Adding the country of sudan at the end \n ----------------------------------------`);
+
+eastAfrican.push("South sudan");
+console.log(`\n Dispalying all countries including the country of south sudan \n --------------------------------------------------------------`);
+console.log(eastAfrican);
+
+//unshift Array
+
+console.log(`\n (unshift) Adding the country of DRC At the beginning \n ----------------------------------------`);
+
+eastAfrican.unshift("RDC");
+console.log(`\n Dispalying all countries including the country of DRC at the begining \n ----------------------------------------------------------------------`);
+console.log(eastAfrican);
