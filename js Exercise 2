@@ -1,29 +1,120 @@
-//2 Arrays
-console.log(`Create 10 arrays of different elements and formats and use the different methods we talked about (length, push, unshift, splice) \n ------------------------------------------------------ \n`);
 
-console.log(`1. Array in Array \n ------------------`);
+console.log(" \n ------------------------------------------------------------------------------");
 
-const eastAfrican = ["Rwanda","Uganda",["Kigali" , "Bujumbura" , "Dodoma" , "Nairobi","Kampala"],"Burundi","Tanzania","Kenya"]
+console.log(`\n 3. two Array in Array \n ----------------------`);
+
+const SuperHeroes = ["Thor" , "Captain America" ,["Aquaman" , "Batman" , "Flash", "Superman" , [" Thanos", " Loki" , "Joker" ,"Ultron", "Red Skull"] , "Wonder Woman"] , "Hulk" , "Quicksilver" , "T'Challa" , "Tony Stark" , "Wanda "]
+
 
 //ARRAY Dispaly
 console.log(`Displaying all elements in array \n -----------------------------------`);
-console.log(eastAfrican);
+console.log(SuperHeroes);
 
 //Array length
-console.log(`\n (length) Displaying the array length \n ------------------------------------`);
-console.log(eastAfrican.length);
+console.log(`\n (length) Displaying the general array length \n ------------------------------------`);
+console.log(SuperHeroes.length);
+console.log(`\n (length) Displaying the first array in array's length \n ----------------------------------------------------`);
+console.log(SuperHeroes[2].length);
+console.log(`\n (length) Displaying the second array in array's length \n ------------------------------------------------------`);
+console.log(SuperHeroes[2][4].length);
 
 //push adding the element at the end of the array
-console.log(`\n (push) Adding the country of sudan at the end \n ----------------------------------------`);
+console.log(`\n (push) Adding another character at the end of array [Ant-Man ]\n -----------------------------------------------------------`);
 
-eastAfrican.push("South sudan");
-console.log(`\n Dispalying all countries including the country of south sudan \n --------------------------------------------------------------`);
-console.log(eastAfrican);
+SuperHeroes.push("Ant-Man");
+console.log(`\n Dispalying all Super Heros including Ant-Man, \n --------------------------------------------------------------`);
+console.log(SuperHeroes);
 
-//unshift Array
+console.log(`\n (push) Adding another character at the end of the first array in array\n -----------------------------------------------------------`);
 
-console.log(`\n (unshift) Adding the country of DRC At the beginning \n ----------------------------------------`);
+SuperHeroes[2].push("Green Lantern");
+console.log(`\n Dispalying all Super Heros including Green Lantern \n --------------------------------------------------------------`);
+console.log(SuperHeroes);
 
-eastAfrican.unshift("RDC");
-console.log(`\n Dispalying all countries including the country of DRC at the begining \n ----------------------------------------------------------------------`);
-console.log(eastAfrican);
+console.log(`\n (push) Adding another character at the end of the second array in array\n -----------------------------------------------------------`);
+
+SuperHeroes[2][4].push("Killmonger");
+console.log(`\n Dispalying all Super Heros including Killmonger \n --------------------------------------------------------------`);
+console.log(SuperHeroes);
+
+// //unshift Array
+
+
+console.log(`\n (unshift) Adding another character At the beginning (Captain Marvel) \n -------------------------------------------------------------------`);
+
+SuperHeroes.unshift("Captain Marvel");
+console.log(`\n Dispalying all Super Heroes including the Captain Marvel at the begining \n ----------------------------------------------------------------------`);
+console.log(SuperHeroes);
+
+console.log(`\n (unshift) Adding another character At the beginning of the first Array in Array  (Green Arrow)\n -------------------------------------------------------------------`);
+
+SuperHeroes[3].unshift("Green Arrow");
+console.log(`\n Dispalying all Super Heroes including the Green Arrow at the begining of the first Array in Array  \n ----------------------------------------------------------------------`);
+console.log(SuperHeroes);
+
+
+
+// //pop
+// console.log(`\n (pop) Removing the last country on the list S.S \n -----------------------------------------------`);
+
+// eastAfrican.pop();
+// console.log(`\n (pop) Elements after Removing the last country on the list S.S \n -----------------------------------------------`);
+
+// console.log(eastAfrican);
+
+// // pop removig the last elements in the middle array
+
+// const removeLastCity = eastAfrican[3].pop();
+// console.log(`\n (pop) Elements after Removing the last City on the list kamapla \n ----------------------------------------------------------------`);
+
+// console.log(eastAfrican);
+
+// //shift
+// console.log(`\n (shift) Removing the first country on the list RDC \n -----------------------------------------------`);
+// eastAfrican.shift();
+// console.log(`\n (shift) Elements after Removing the first country on the list RDC \n -----------------------------------------------------------------`);
+
+// console.log(eastAfrican);
+
+// //splice
+// console.log(`\n (splice) Removing the two countries || Kenya & Tanzania \n ----------------------------------------------------------`);
+// const removeCountries = eastAfrican.splice(4,5);
+
+// console.log(eastAfrican);
+
+// console.log(`\n (splice) Adding two countries || Zambia & Togo \n ----------------------------------------------------------`);
+
+// eastAfrican.splice(2, 0, "Zambia", "Togo");
+
+// console.log(eastAfrican);
+
+// console.log(`\n (splice) Adding two  Cities after countries || Zambia(Lusaka) & Togo(lome) \n -----------------------------------------------------------------`);
+
+// eastAfrican[4].splice(2, 0, "Lusaka", "lome");
+// console.log(eastAfrican);
+
+// console.log(" \n ------------------------------------------------------------------------------");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
