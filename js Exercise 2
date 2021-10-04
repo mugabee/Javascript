@@ -1,245 +1,299 @@
-console.log(`Create 10 arrays of different elements and formats and use the different methods we talked about (length, push, unshift, splice) \n ------------------------------------------------------ \n`);
 
-console.log(`1. Single Array \n ------------------`);
+const SuperHeroes = ["Thor" , " Captain America " ,"Hulk" , " T'Challa" , " Tony Stark" , " Wanda " , " Aquaman" , " Batman" , " Flash", " Superman"," Wonder Woman" , " Thanos", " Loki" , " Joker" ," Ultron", " Red Skull", ]
 
-//the-40-smartest-people-of-all-tim
+console.log(`selecting  super Heroes from Marvel (using slice)  \n --------------------------------------------------`);
 
-const smartestPeople = ["Albert Einstein","Leonardo da Vinci", "Isaac Newton","Galileo Galilei"," Nikola Tesla","William Shakespeare"]
+const marvelSuperHeroes =  SuperHeroes.slice(0, 6);
+console.log(`Marvel SuperHeroes Are:  ${marvelSuperHeroes}`);
 
-//ARRAY Dispaly
-console.log(`Displaying all elements in array \n -----------------------------------`);
-console.log(smartestPeople);
+console.log(`selecting  super Heroes from DC (using slice) \n -----------------------------------------------`);
+const dcSuperHeroes =  SuperHeroes.slice(6, 11);
+console.log(`DC SuperHeroes Are:  ${dcSuperHeroes}`);
 
-//Array length
-console.log(`\n (length) Displaying the array length \n ------------------------------------`);
-console.log(smartestPeople.length);
+console.log(`selecting  the notorious guys (using slice -n) \n -------------------------------------------`);
+const superNotorious =  SuperHeroes.slice(-5);
 
-//push adding the element at the end of the array
-console.log(`\n (push) Adding Another person at the end (Marie Curie) \n ----------------------------------------------------------`);
-
-smartestPeople.push("Marie Curie");
-console.log(`\n Dispalying all Smartest People including the Marie Curie \n --------------------------------------------------------------`);
-console.log(smartestPeople);
-
-//unshift Array
-
-console.log(`\n (unshift) Adding Thomas Edison At the beginning \n -----------------------------------------------`);
-
-smartestPeople.unshift("Thomas Edison");
-console.log(`\n Dispalying all Smartest People including Thomas Edison at the begining \n ----------------------------------------------------------------------`);
-console.log(smartestPeople);
-
-//pop
-console.log(`\n (pop) Removing the last Person on the list (Marie Curie)  \n -----------------------------------------------------------`);
-
-smartestPeople.pop();
-console.log(`\n (pop) Elements after Removing the last Person on the list (Marie Curie) \n ----------------------------------------------------------------------`);
-
-console.log(smartestPeople);
-
-//shift
-console.log(`\n (shift) Removing the first Person on the list (Thomas Edison) \n --------------------------------------------------------`);
-smartestPeople.shift();
-console.log(`\n (shift) Elements after Removing the first Person on the list (Thomas Edison) \n ---------------------------------------------------------------------------`);
-
-console.log(smartestPeople);
-
-//splice
-console.log(`\n (splice) Removing the two people on the list || Leonardo da Vinci & Isaac Newton | \n ----------------------------------------------------------`);
-const removePerson = smartestPeople.splice(1,2);
-
-console.log(smartestPeople);
-
-console.log(`\n (splice) Adding two people  || Stephen Hawking & Carl Gauss \n ------------------------------------------------------------`);
-
-smartestPeople.splice(2, 0, "Stephen Hawking", "Carl Gauss");
-
-console.log(smartestPeople);
+console.log(`The popular Notorious guys  Are:  ${superNotorious}`);
 
 
-console.log(" \n ------------------------------------------------------------------------------");
+console.log(`Joining Marvel & DC super Heroes ( using concat) \n ----------------------------------------------`);
+const onlySuperHeroes =  marvelSuperHeroes.concat(dcSuperHeroes);
+console.log(`Only Super Heroes Excluding the bad guys: \n \n ${onlySuperHeroes} \n`);
 
-console.log(`\n 2. Array in Array \n ------------------`);
-
-const eastAfrican = ["Rwanda","Uganda",["Kigali" , "Bujumbura" , "Dodoma" , "Nairobi","Kampala"],"Burundi","Tanzania","Kenya"]
-
-//ARRAY Dispaly
-console.log(`Displaying all elements in array \n -----------------------------------`);
-console.log(eastAfrican);
-
-//Array length
-console.log(`\n (length) Displaying the array length \n ------------------------------------`);
-console.log(eastAfrican.length);
-
-//push adding the element at the end of the array
-console.log(`\n (push) Adding the country of sudan at the end \n ----------------------------------------`);
-
-eastAfrican.push("South sudan");
-console.log(`\n Dispalying all countries including the country of south sudan \n --------------------------------------------------------------`);
-console.log(eastAfrican);
-
-//unshift Array
-
-console.log(`\n (unshift) Adding the country of DRC At the beginning \n ----------------------------------------`);
-
-eastAfrican.unshift("RDC");
-console.log(`\n Dispalying all countries including the country of DRC at the begining \n ----------------------------------------------------------------------`);
-console.log(eastAfrican);
-
-//pop
-console.log(`\n (pop) Removing the last country on the list S.S \n -----------------------------------------------`);
-
-eastAfrican.pop();
-console.log(`\n (pop) Elements after Removing the last country on the list S.S \n -----------------------------------------------`);
-
-console.log(eastAfrican);
-
-// pop removig the last elements in the middle array
-
-const removeLastCity = eastAfrican[3].pop();
-console.log(`\n (pop) Elements after Removing the last City on the list kamapla \n ----------------------------------------------------------------`);
-
-console.log(eastAfrican);
-
-//shift
-console.log(`\n (shift) Removing the first country on the list RDC \n -----------------------------------------------`);
-eastAfrican.shift();
-console.log(`\n (shift) Elements after Removing the first country on the list RDC \n -----------------------------------------------------------------`);
-
-console.log(eastAfrican);
-
-//splice
-console.log(`\n (splice) Removing the two countries || Kenya & Tanzania \n ----------------------------------------------------------`);
-const removeCountries = eastAfrican.splice(4,5);
-
-console.log(eastAfrican);
-
-console.log(`\n (splice) Adding two countries || Zambia & Togo \n ----------------------------------------------------------`);
-
-eastAfrican.splice(2, 0, "Zambia", "Togo");
-
-console.log(eastAfrican);
-
-console.log(`\n (splice) Adding two  Cities after countries || Zambia(Lusaka) & Togo(lome) \n -----------------------------------------------------------------`);
-
-eastAfrican[4].splice(2, 0, "Lusaka", "lome");
-console.log(eastAfrican);
+console.log(`Checking if Wonder Woman is among the super Heroes at index -1 ( using indexOf) \n -------------------------------------------------------------`);
 
 
 
-console.log(" \n ------------------------------------------------------------------------------");
+if (onlySuperHeroes.indexOf(" Wonder Woman") != -1) {
+  console.log(" \nWonder Woman is a Super Hero at index of -1")
+} else {
+  console.log(" \n Wonder Woman is not a super Hero")
+}
 
-console.log(`\n 3. two Array in Array \n ----------------------`);
+console.log(`Checking if thanos is among the super Heroes ( using includes) \n -------------------------------------------------------------`);
 
-const SuperHeroes = ["Thor" , "Captain America" ,["Aquaman" , "Batman" , "Flash", "Superman" , [" Thanos", " Loki" , "Joker" ,"Ultron", "Red Skull"] , "Wonder Woman"] , "Hulk" , "Quicksilver" , "T'Challa" , "Tony Stark" , "Wanda "]
+console.log(onlySuperHeroes.includes(" Thanos"))
+
+console.log(`Checking if Hulk is among the super Heroes ( using includes) \n -------------------------------------------------------------`);
+
+console.log(onlySuperHeroes.includes("Hulk"))
+
+console.log(`listing all super Heroes according to there index \n -----------------------------------------------`);
 
 
-//ARRAY Dispaly
-console.log(`Displaying all elements in array \n -----------------------------------`);
-console.log(SuperHeroes);
 
-//Array length
-console.log(`\n (length) Displaying the general array length \n ------------------------------------`);
-console.log(SuperHeroes.length);
-console.log(`\n (length) Displaying the first array in array's length \n ----------------------------------------------------`);
-console.log(SuperHeroes[2].length);
-console.log(`\n (length) Displaying the second array in array's length \n ------------------------------------------------------`);
-console.log(SuperHeroes[2][4].length);
+for (let i = 0; i < onlySuperHeroes.length; i++) {
+  console.log(`Super Heroes at index ${i} is ${onlySuperHeroes[i]}`);
+}
+  
 
-//push adding the element at the end of the array
-console.log(`\n (push) Adding another character at the end of array [Ant-Man ]\n -----------------------------------------------------------`);
 
-SuperHeroes.push("Ant-Man");
-console.log(`\n Dispalying all Super Heros including Ant-Man, \n --------------------------------------------------------------`);
-console.log(SuperHeroes);
 
-console.log(`\n (push) Adding another character at the end of the first array in array\n -----------------------------------------------------------`);
+// -------------------------------------------------------------------------
+// for (let heroes of onlySuperHeroes) { 
+//    console.log(`The super Hero is ${heroes}`);
+//  }
 
-SuperHeroes[2].push("Green Lantern");
-console.log(`\n Dispalying all Super Heros including Green Lantern \n --------------------------------------------------------------`);
-console.log(SuperHeroes);
 
-console.log(`\n (push) Adding another character at the end of the second array in array\n -----------------------------------------------------------`);
+// console.log(`Create 10 arrays of different elements and formats and use the different methods we talked about (length, push, unshift, splice) \n ------------------------------------------------------ \n`);
 
-SuperHeroes[2][4].push("Killmonger");
-console.log(`\n Dispalying all Super Heros including Killmonger \n --------------------------------------------------------------`);
-console.log(SuperHeroes);
+// console.log(`1. Single Array \n ------------------`);
+
+// //the-40-smartest-people-of-all-tim
+
+// const smartestPeople = ["Albert Einstein","Leonardo da Vinci", "Isaac Newton","Galileo Galilei"," Nikola Tesla","William Shakespeare"]
+
+// //ARRAY Dispaly
+// console.log(`Displaying all elements in array \n -----------------------------------`);
+// console.log(smartestPeople);
+
+// //Array length
+// console.log(`\n (length) Displaying the array length \n ------------------------------------`);
+// console.log(smartestPeople.length);
+
+// //push adding the element at the end of the array
+// console.log(`\n (push) Adding Another person at the end (Marie Curie) \n ----------------------------------------------------------`);
+
+// smartestPeople.push("Marie Curie");
+// console.log(`\n Dispalying all Smartest People including the Marie Curie \n --------------------------------------------------------------`);
+// console.log(smartestPeople);
 
 // //unshift Array
 
+// console.log(`\n (unshift) Adding Thomas Edison At the beginning \n -----------------------------------------------`);
 
-console.log(`\n (unshift) Adding another character At the beginning (Captain Marvel) \n -------------------------------------------------------------------`);
+// smartestPeople.unshift("Thomas Edison");
+// console.log(`\n Dispalying all Smartest People including Thomas Edison at the begining \n ----------------------------------------------------------------------`);
+// console.log(smartestPeople);
 
-SuperHeroes.unshift("Captain Marvel");
-console.log(`\n Dispalying all Super Heroes including the Captain Marvel at the begining \n ----------------------------------------------------------------------`);
-console.log(SuperHeroes);
+// //pop
+// console.log(`\n (pop) Removing the last Person on the list (Marie Curie)  \n -----------------------------------------------------------`);
 
-console.log(`\n (unshift) Adding another character At the beginning of the first Array in Array  (Green Arrow)\n -------------------------------------------------------------------`);
+// smartestPeople.pop();
+// console.log(`\n (pop) Elements after Removing the last Person on the list (Marie Curie) \n ----------------------------------------------------------------------`);
 
-SuperHeroes[3].unshift("Green Arrow");
-console.log(`\n Dispalying all Super Heroes including the Green Arrow at the begining of the first Array in Array  \n ----------------------------------------------------------------------`);
-console.log(SuperHeroes);
+// console.log(smartestPeople);
 
-console.log(`\n (unshift) Adding another character At the beginning of the second Array in Array  (Agent Smith)\n -------------------------------------------------------------------`);
+// //shift
+// console.log(`\n (shift) Removing the first Person on the list (Thomas Edison) \n --------------------------------------------------------`);
+// smartestPeople.shift();
+// console.log(`\n (shift) Elements after Removing the first Person on the list (Thomas Edison) \n ---------------------------------------------------------------------------`);
 
-SuperHeroes[3][5].unshift("Agent Smith");
-console.log(`\n Dispalying all Super Heroes including the Agent Smith at the begining of the second Array in Array  \n ----------------------------------------------------------------------`);
-console.log(SuperHeroes);
+// console.log(smartestPeople);
+
+// //splice
+// console.log(`\n (splice) Removing the two people on the list || Leonardo da Vinci & Isaac Newton | \n ----------------------------------------------------------`);
+// const removePerson = smartestPeople.splice(1,2);
+
+// console.log(smartestPeople);
+
+// console.log(`\n (splice) Adding two people  || Stephen Hawking & Carl Gauss \n ------------------------------------------------------------`);
+
+// smartestPeople.splice(2, 0, "Stephen Hawking", "Carl Gauss");
+
+// console.log(smartestPeople);
 
 
+// console.log(" \n ------------------------------------------------------------------------------");
 
+// console.log(`\n 2. Array in Array \n ------------------`);
 
-//pop
-console.log(`\n (pop) Removing the last character on the list Ant-man  \n --------------------------------------------------`);
+// const eastAfrican = ["Rwanda","Uganda",["Kigali" , "Bujumbura" , "Dodoma" , "Nairobi","Kampala"],"Burundi","Tanzania","Kenya"]
 
-SuperHeroes.pop();
-console.log(`\n (pop) Elements after Removing the last country on the list Ant-man \n -------------------------------------------------------------`);
+// //ARRAY Dispaly
+// console.log(`Displaying all elements in array \n -----------------------------------`);
+// console.log(eastAfrican);
 
-console.log(SuperHeroes);
+// //Array length
+// console.log(`\n (length) Displaying the array length \n ------------------------------------`);
+// console.log(eastAfrican.length);
+
+// //push adding the element at the end of the array
+// console.log(`\n (push) Adding the country of sudan at the end \n ----------------------------------------`);
+
+// eastAfrican.push("South sudan");
+// console.log(`\n Dispalying all countries including the country of south sudan \n --------------------------------------------------------------`);
+// console.log(eastAfrican);
+
+// //unshift Array
+
+// console.log(`\n (unshift) Adding the country of DRC At the beginning \n ----------------------------------------`);
+
+// eastAfrican.unshift("RDC");
+// console.log(`\n Dispalying all countries including the country of DRC at the begining \n ----------------------------------------------------------------------`);
+// console.log(eastAfrican);
+
+// //pop
+// console.log(`\n (pop) Removing the last country on the list S.S \n -----------------------------------------------`);
+
+// eastAfrican.pop();
+// console.log(`\n (pop) Elements after Removing the last country on the list S.S \n -----------------------------------------------`);
+
+// console.log(eastAfrican);
 
 // // pop removig the last elements in the middle array
-console.log(`\n (pop) Removing the last character on the first Array in Array  (Green Lantern) \n --------------------------------------------------`);
 
-const removeLastDcCharacter = SuperHeroes[3].pop();
-console.log(`\n (pop) Elements after Removing the last character (Green Lantern) \n ----------------------------------------------------------------`);
+// const removeLastCity = eastAfrican[3].pop();
+// console.log(`\n (pop) Elements after Removing the last City on the list kamapla \n ----------------------------------------------------------------`);
 
-console.log(SuperHeroes);
+// console.log(eastAfrican);
 
-console.log(`\n (pop) Removing the last character on the second Array in Array  (Killmonger) \n ----------------------------------------------------------------------------`);
+// //shift
+// console.log(`\n (shift) Removing the first country on the list RDC \n -----------------------------------------------`);
+// eastAfrican.shift();
+// console.log(`\n (shift) Elements after Removing the first country on the list RDC \n -----------------------------------------------------------------`);
 
-const removeLastbadCharacter = SuperHeroes[3][5].pop();
-console.log(`\n (pop) Elements after Removing the last character (Killmonger) \n ----------------------------------------------------------------`);
+// console.log(eastAfrican);
 
-console.log(SuperHeroes);
+// //splice
+// console.log(`\n (splice) Removing the two countries || Kenya & Tanzania \n ----------------------------------------------------------`);
+// const removeCountries = eastAfrican.splice(4,5);
 
-//shift
-console.log(`\n (shift) Removing the first character on marvel the list (Captain Marvel)  \n -------------------------------------------------------------------------`);
-SuperHeroes.shift();
-console.log(`\n (shift) Elements after Removing the first character on the list (Captain Marvel) \n -----------------------------------------------------------------`);
+// console.log(eastAfrican);
 
-console.log(SuperHeroes);
+// console.log(`\n (splice) Adding two countries || Zambia & Togo \n ----------------------------------------------------------`);
 
-//splice
-console.log(`\n (splice) Removing the two characters || Tony Stark & Wanda \n ----------------------------------------------------------`);
-const removeCharacters = SuperHeroes.splice(6,7);
+// eastAfrican.splice(2, 0, "Zambia", "Togo");
 
-console.log(SuperHeroes);
+// console.log(eastAfrican);
 
-console.log(`\n (splice) Adding two characters || Spider- man & Doctor Strange \n ---------------------------------------------------------------`);
+// console.log(`\n (splice) Adding two  Cities after countries || Zambia(Lusaka) & Togo(lome) \n -----------------------------------------------------------------`);
 
-SuperHeroes.splice(2, 0, "Spider-man", " Doctor-Strange");
-
-console.log(SuperHeroes);
-
-console.log(`\n (splice) Adding two  Cities after countries || Zambia(Lusaka) & Togo(lome) \n -----------------------------------------------------------------`);
-
-SuperHeroes[4].splice(2, 0, "Deadshot", "x-men");
-console.log(SuperHeroes);
-
-console.log(" \n ------------------------------------------------------------------------------");
+// eastAfrican[4].splice(2, 0, "Lusaka", "lome");
+// console.log(eastAfrican);
 
 
 
+// console.log(" \n ------------------------------------------------------------------------------");
+
+// console.log(`\n 3. two Array in Array \n ----------------------`);
+
+// const SuperHeroes = ["Thor" , "Captain America" ,["Aquaman" , "Batman" , "Flash", "Superman" , [" Thanos", " Loki" , "Joker" ,"Ultron", "Red Skull"] , "Wonder Woman"] , "Hulk" , "Quicksilver" , "T'Challa" , "Tony Stark" , "Wanda "]
+
+
+// //ARRAY Dispaly
+// console.log(`Displaying all elements in array \n -----------------------------------`);
+// console.log(SuperHeroes);
+
+// //Array length
+// console.log(`\n (length) Displaying the general array length \n ------------------------------------`);
+// console.log(SuperHeroes.length);
+// console.log(`\n (length) Displaying the first array in array's length \n ----------------------------------------------------`);
+// console.log(SuperHeroes[2].length);
+// console.log(`\n (length) Displaying the second array in array's length \n ------------------------------------------------------`);
+// console.log(SuperHeroes[2][4].length);
+
+// //push adding the element at the end of the array
+// console.log(`\n (push) Adding another character at the end of array [Ant-Man ]\n -----------------------------------------------------------`);
+
+// SuperHeroes.push("Ant-Man");
+// console.log(`\n Dispalying all Super Heros including Ant-Man, \n --------------------------------------------------------------`);
+// console.log(SuperHeroes);
+
+// console.log(`\n (push) Adding another character at the end of the first array in array\n -----------------------------------------------------------`);
+
+// SuperHeroes[2].push("Green Lantern");
+// console.log(`\n Dispalying all Super Heros including Green Lantern \n --------------------------------------------------------------`);
+// console.log(SuperHeroes);
+
+// console.log(`\n (push) Adding another character at the end of the second array in array\n -----------------------------------------------------------`);
+
+// SuperHeroes[2][4].push("Killmonger");
+// console.log(`\n Dispalying all Super Heros including Killmonger \n --------------------------------------------------------------`);
+// console.log(SuperHeroes);
+
+// // //unshift Array
+
+
+// console.log(`\n (unshift) Adding another character At the beginning (Captain Marvel) \n -------------------------------------------------------------------`);
+
+// SuperHeroes.unshift("Captain Marvel");
+// console.log(`\n Dispalying all Super Heroes including the Captain Marvel at the begining \n ----------------------------------------------------------------------`);
+// console.log(SuperHeroes);
+
+// console.log(`\n (unshift) Adding another character At the beginning of the first Array in Array  (Green Arrow)\n -------------------------------------------------------------------`);
+
+// SuperHeroes[3].unshift("Green Arrow");
+// console.log(`\n Dispalying all Super Heroes including the Green Arrow at the begining of the first Array in Array  \n ----------------------------------------------------------------------`);
+// console.log(SuperHeroes);
+
+// console.log(`\n (unshift) Adding another character At the beginning of the second Array in Array  (Agent Smith)\n -------------------------------------------------------------------`);
+
+// SuperHeroes[3][5].unshift("Agent Smith");
+// console.log(`\n Dispalying all Super Heroes including the Agent Smith at the begining of the second Array in Array  \n ----------------------------------------------------------------------`);
+// console.log(SuperHeroes);
+
+
+
+
+// //pop
+// console.log(`\n (pop) Removing the last character on the list Ant-man  \n --------------------------------------------------`);
+
+// SuperHeroes.pop();
+// console.log(`\n (pop) Elements after Removing the last country on the list Ant-man \n -------------------------------------------------------------`);
+
+// console.log(SuperHeroes);
+
+// // // pop removig the last elements in the middle array
+// console.log(`\n (pop) Removing the last character on the first Array in Array  (Green Lantern) \n --------------------------------------------------`);
+
+// const removeLastDcCharacter = SuperHeroes[3].pop();
+// console.log(`\n (pop) Elements after Removing the last character (Green Lantern) \n ----------------------------------------------------------------`);
+
+// console.log(SuperHeroes);
+
+// console.log(`\n (pop) Removing the last character on the second Array in Array  (Killmonger) \n ----------------------------------------------------------------------------`);
+
+// const removeLastbadCharacter = SuperHeroes[3][5].pop();
+// console.log(`\n (pop) Elements after Removing the last character (Killmonger) \n ----------------------------------------------------------------`);
+
+// console.log(SuperHeroes);
+
+// //shift
+// console.log(`\n (shift) Removing the first character on marvel the list (Captain Marvel)  \n -------------------------------------------------------------------------`);
+// SuperHeroes.shift();
+// console.log(`\n (shift) Elements after Removing the first character on the list (Captain Marvel) \n -----------------------------------------------------------------`);
+
+// console.log(SuperHeroes);
+
+// //splice
+// console.log(`\n (splice) Removing the two characters || Tony Stark & Wanda \n ----------------------------------------------------------`);
+// const removeCharacters = SuperHeroes.splice(6,7);
+
+// console.log(SuperHeroes);
+
+// console.log(`\n (splice) Adding two characters || Spider- man & Doctor Strange \n ---------------------------------------------------------------`);
+
+// SuperHeroes.splice(2, 0, "Spider-man", " Doctor-Strange");
+
+// console.log(SuperHeroes);
+
+// console.log(`\n (splice) Adding two  Cities after countries || Zambia(Lusaka) & Togo(lome) \n -----------------------------------------------------------------`);
+
+// SuperHeroes[4].splice(2, 0, "Deadshot", "x-men");
+// console.log(SuperHeroes);
+
+// console.log(" \n ------------------------------------------------------------------------------");
 
 
 
@@ -259,5 +313,15 @@ console.log(" \n ---------------------------------------------------------------
 
 
 
+
+
+
+
+
+
+
+
+  
+   
 
 
