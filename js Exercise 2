@@ -1,3 +1,131 @@
+console.log(`Create 10 arrays of different elements and formats and use the different methods we talked about (length, push, unshift, splice) \n ------------------------------------------------------ \n`);
+
+console.log(`1. Single Array \n ------------------`);
+
+//the-40-smartest-people-of-all-tim
+
+const smartestPeople = ["Albert Einstein","Leonardo da Vinci", "Isaac Newton","Galileo Galilei"," Nikola Tesla","William Shakespeare"]
+
+//ARRAY Dispaly
+console.log(`Displaying all elements in array \n -----------------------------------`);
+console.log(smartestPeople);
+
+//Array length
+console.log(`\n (length) Displaying the array length \n ------------------------------------`);
+console.log(smartestPeople.length);
+
+//push adding the element at the end of the array
+console.log(`\n (push) Adding Another person at the end (Marie Curie) \n ----------------------------------------------------------`);
+
+smartestPeople.push("Marie Curie");
+console.log(`\n Dispalying all Smartest People including the Marie Curie \n --------------------------------------------------------------`);
+console.log(smartestPeople);
+
+//unshift Array
+
+console.log(`\n (unshift) Adding Thomas Edison At the beginning \n -----------------------------------------------`);
+
+smartestPeople.unshift("Thomas Edison");
+console.log(`\n Dispalying all Smartest People including Thomas Edison at the begining \n ----------------------------------------------------------------------`);
+console.log(smartestPeople);
+
+//pop
+console.log(`\n (pop) Removing the last Person on the list (Marie Curie)  \n -----------------------------------------------------------`);
+
+smartestPeople.pop();
+console.log(`\n (pop) Elements after Removing the last Person on the list (Marie Curie) \n ----------------------------------------------------------------------`);
+
+console.log(smartestPeople);
+
+//shift
+console.log(`\n (shift) Removing the first Person on the list (Thomas Edison) \n --------------------------------------------------------`);
+smartestPeople.shift();
+console.log(`\n (shift) Elements after Removing the first Person on the list (Thomas Edison) \n ---------------------------------------------------------------------------`);
+
+console.log(smartestPeople);
+
+//splice
+console.log(`\n (splice) Removing the two people on the list || Leonardo da Vinci & Isaac Newton | \n ----------------------------------------------------------`);
+const removePerson = smartestPeople.splice(1,2);
+
+console.log(smartestPeople);
+
+console.log(`\n (splice) Adding two people  || Stephen Hawking & Carl Gauss \n ------------------------------------------------------------`);
+
+smartestPeople.splice(2, 0, "Stephen Hawking", "Carl Gauss");
+
+console.log(smartestPeople);
+
+
+console.log(" \n ------------------------------------------------------------------------------");
+
+console.log(`\n 2. Array in Array \n ------------------`);
+
+const eastAfrican = ["Rwanda","Uganda",["Kigali" , "Bujumbura" , "Dodoma" , "Nairobi","Kampala"],"Burundi","Tanzania","Kenya"]
+
+//ARRAY Dispaly
+console.log(`Displaying all elements in array \n -----------------------------------`);
+console.log(eastAfrican);
+
+//Array length
+console.log(`\n (length) Displaying the array length \n ------------------------------------`);
+console.log(eastAfrican.length);
+
+//push adding the element at the end of the array
+console.log(`\n (push) Adding the country of sudan at the end \n ----------------------------------------`);
+
+eastAfrican.push("South sudan");
+console.log(`\n Dispalying all countries including the country of south sudan \n --------------------------------------------------------------`);
+console.log(eastAfrican);
+
+//unshift Array
+
+console.log(`\n (unshift) Adding the country of DRC At the beginning \n ----------------------------------------`);
+
+eastAfrican.unshift("RDC");
+console.log(`\n Dispalying all countries including the country of DRC at the begining \n ----------------------------------------------------------------------`);
+console.log(eastAfrican);
+
+//pop
+console.log(`\n (pop) Removing the last country on the list S.S \n -----------------------------------------------`);
+
+eastAfrican.pop();
+console.log(`\n (pop) Elements after Removing the last country on the list S.S \n -----------------------------------------------`);
+
+console.log(eastAfrican);
+
+// pop removig the last elements in the middle array
+
+const removeLastCity = eastAfrican[3].pop();
+console.log(`\n (pop) Elements after Removing the last City on the list kamapla \n ----------------------------------------------------------------`);
+
+console.log(eastAfrican);
+
+//shift
+console.log(`\n (shift) Removing the first country on the list RDC \n -----------------------------------------------`);
+eastAfrican.shift();
+console.log(`\n (shift) Elements after Removing the first country on the list RDC \n -----------------------------------------------------------------`);
+
+console.log(eastAfrican);
+
+//splice
+console.log(`\n (splice) Removing the two countries || Kenya & Tanzania \n ----------------------------------------------------------`);
+const removeCountries = eastAfrican.splice(4,5);
+
+console.log(eastAfrican);
+
+console.log(`\n (splice) Adding two countries || Zambia & Togo \n ----------------------------------------------------------`);
+
+eastAfrican.splice(2, 0, "Zambia", "Togo");
+
+console.log(eastAfrican);
+
+console.log(`\n (splice) Adding two  Cities after countries || Zambia(Lusaka) & Togo(lome) \n -----------------------------------------------------------------`);
+
+eastAfrican[4].splice(2, 0, "Lusaka", "lome");
+console.log(eastAfrican);
+
+
 
 console.log(" \n ------------------------------------------------------------------------------");
 
@@ -52,48 +180,63 @@ SuperHeroes[3].unshift("Green Arrow");
 console.log(`\n Dispalying all Super Heroes including the Green Arrow at the begining of the first Array in Array  \n ----------------------------------------------------------------------`);
 console.log(SuperHeroes);
 
+console.log(`\n (unshift) Adding another character At the beginning of the second Array in Array  (Agent Smith)\n -------------------------------------------------------------------`);
+
+SuperHeroes[3][5].unshift("Agent Smith");
+console.log(`\n Dispalying all Super Heroes including the Agent Smith at the begining of the second Array in Array  \n ----------------------------------------------------------------------`);
+console.log(SuperHeroes);
 
 
-// //pop
-// console.log(`\n (pop) Removing the last country on the list S.S \n -----------------------------------------------`);
 
-// eastAfrican.pop();
-// console.log(`\n (pop) Elements after Removing the last country on the list S.S \n -----------------------------------------------`);
 
-// console.log(eastAfrican);
+//pop
+console.log(`\n (pop) Removing the last character on the list Ant-man  \n --------------------------------------------------`);
+
+SuperHeroes.pop();
+console.log(`\n (pop) Elements after Removing the last country on the list Ant-man \n -------------------------------------------------------------`);
+
+console.log(SuperHeroes);
 
 // // pop removig the last elements in the middle array
+console.log(`\n (pop) Removing the last character on the first Array in Array  (Green Lantern) \n --------------------------------------------------`);
 
-// const removeLastCity = eastAfrican[3].pop();
-// console.log(`\n (pop) Elements after Removing the last City on the list kamapla \n ----------------------------------------------------------------`);
+const removeLastDcCharacter = SuperHeroes[3].pop();
+console.log(`\n (pop) Elements after Removing the last character (Green Lantern) \n ----------------------------------------------------------------`);
 
-// console.log(eastAfrican);
+console.log(SuperHeroes);
 
-// //shift
-// console.log(`\n (shift) Removing the first country on the list RDC \n -----------------------------------------------`);
-// eastAfrican.shift();
-// console.log(`\n (shift) Elements after Removing the first country on the list RDC \n -----------------------------------------------------------------`);
+console.log(`\n (pop) Removing the last character on the second Array in Array  (Killmonger) \n ----------------------------------------------------------------------------`);
 
-// console.log(eastAfrican);
+const removeLastbadCharacter = SuperHeroes[3][5].pop();
+console.log(`\n (pop) Elements after Removing the last character (Killmonger) \n ----------------------------------------------------------------`);
 
-// //splice
-// console.log(`\n (splice) Removing the two countries || Kenya & Tanzania \n ----------------------------------------------------------`);
-// const removeCountries = eastAfrican.splice(4,5);
+console.log(SuperHeroes);
 
-// console.log(eastAfrican);
+//shift
+console.log(`\n (shift) Removing the first character on marvel the list (Captain Marvel)  \n -------------------------------------------------------------------------`);
+SuperHeroes.shift();
+console.log(`\n (shift) Elements after Removing the first character on the list (Captain Marvel) \n -----------------------------------------------------------------`);
 
-// console.log(`\n (splice) Adding two countries || Zambia & Togo \n ----------------------------------------------------------`);
+console.log(SuperHeroes);
 
-// eastAfrican.splice(2, 0, "Zambia", "Togo");
+//splice
+console.log(`\n (splice) Removing the two characters || Tony Stark & Wanda \n ----------------------------------------------------------`);
+const removeCharacters = SuperHeroes.splice(6,7);
 
-// console.log(eastAfrican);
+console.log(SuperHeroes);
 
-// console.log(`\n (splice) Adding two  Cities after countries || Zambia(Lusaka) & Togo(lome) \n -----------------------------------------------------------------`);
+console.log(`\n (splice) Adding two characters || Spider- man & Doctor Strange \n ---------------------------------------------------------------`);
 
-// eastAfrican[4].splice(2, 0, "Lusaka", "lome");
-// console.log(eastAfrican);
+SuperHeroes.splice(2, 0, "Spider-man", " Doctor-Strange");
 
-// console.log(" \n ------------------------------------------------------------------------------");
+console.log(SuperHeroes);
+
+console.log(`\n (splice) Adding two  Cities after countries || Zambia(Lusaka) & Togo(lome) \n -----------------------------------------------------------------`);
+
+SuperHeroes[4].splice(2, 0, "Deadshot", "x-men");
+console.log(SuperHeroes);
+
+console.log(" \n ------------------------------------------------------------------------------");
 
 
 
