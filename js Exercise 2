@@ -8,8 +8,13 @@ const appleInc = {
   specialization: "Consumer Electronics",
   headQuaters: "United State",
   "current CEO": "Tim Cook",
-  mainProducts: ['iphone', 'Macbook', 'ipod'],
+  mainProducts: ["smartphones", "personal computers,", "tablets"],
   yearFounded: 1976,
+  productSpecifications: ["Memory: 8 GB", "Storage: 256 GB"],
+  
+  companySummary: function () {
+    return `\n ${this.["current CEO"]} is the Current CEO of ${this.companyName} whic is spsecialized in ${this.specialization} \n`
+  },
 
   calcAge: function () {
     this.age = 2021 - this.yearFounded;
@@ -52,11 +57,36 @@ console.log(`\n ------- --- ---(push) Adding an element in Array of Object--- --
 
 appleInc.mainProducts.push("ipad");
 appleInc.mainProducts
+const productNew = appleInc.mainProducts;
+const specificationsNew = appleInc.productSpecifications;
 
-console.log(`------- --- --- -Looping --- ------ ----`);
- for (var inc in appleInc) {
-    console.log(appleInc[inc]);
-  }
+
+
+console.log(`\n ------- --- ---displaying the company summary--- ------ ----\n`);
+
+console.log(appleInc.companySummary())
+
+// console.log(`------- --- --- -Looping --- ------ ----`);
+//  for (var inc in appleInc) {
+//     console.log(appleInc[inc]);
+//   }
+
+console.log(`\n ------- --- ---(CONCAT) Joining an element in Array of Object--- ------ ----`);
+
+console.log(productNew)
+console.log(specificationsNew)
+
+// const onlySuperHeroes =  marvelSuperHeroes.concat(dcSuperHeroes);
+
+const productsAndspecifications = productNew.concat(specificationsNew);
+
+ appleInc.productsAndspecifications = productsAndspecifications;
+
+console.log(appleInc);
+
+
+
+
 
 
 
