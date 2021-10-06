@@ -1,62 +1,4 @@
 
-const SuperHeroes = ["Thor" , " Captain America " ,"Hulk" , " T'Challa" , " Tony Stark" , " Wanda " , " Aquaman" , " Batman" , " Flash", " Superman"," Wonder Woman" , " Thanos", " Loki" , " Joker" ," Ultron", " Red Skull", ]
-
-console.log(`selecting  super Heroes from Marvel (using slice)  \n --------------------------------------------------`);
-
-const marvelSuperHeroes =  SuperHeroes.slice(0, 6);
-console.log(`Marvel SuperHeroes Are:  ${marvelSuperHeroes}`);
-
-console.log(`selecting  super Heroes from DC (using slice) \n -----------------------------------------------`);
-const dcSuperHeroes =  SuperHeroes.slice(6, 11);
-console.log(`DC SuperHeroes Are:  ${dcSuperHeroes}`);
-
-console.log(`selecting  the notorious guys (using slice -n) \n -------------------------------------------`);
-const superNotorious =  SuperHeroes.slice(-5);
-
-console.log(`The popular Notorious guys  Are:  ${superNotorious}`);
-
-
-console.log(`Joining Marvel & DC super Heroes ( using concat) \n ----------------------------------------------`);
-const onlySuperHeroes =  marvelSuperHeroes.concat(dcSuperHeroes);
-console.log(`Only Super Heroes Excluding the bad guys: \n \n ${onlySuperHeroes} \n`);
-
-console.log(`Checking if Wonder Woman is among the super Heroes at index -1 ( using indexOf) \n -------------------------------------------------------------`);
-
-
-
-if (onlySuperHeroes.indexOf(" Wonder Woman") != -1) {
-  console.log(" \nWonder Woman is a Super Hero at index of -1")
-} else {
-  console.log(" \n Wonder Woman is not a super Hero")
-}
-
-console.log(`Checking if thanos is among the super Heroes ( using includes) \n -------------------------------------------------------------`);
-
-console.log(onlySuperHeroes.includes(" Thanos"))
-
-console.log(`Checking if Hulk is among the super Heroes ( using includes) \n -------------------------------------------------------------`);
-
-console.log(onlySuperHeroes.includes("Hulk"))
-
-console.log(`listing all super Heroes according to there index \n -----------------------------------------------`);
-
-
-
-// for (let i = 0; i < onlySuperHeroes.length; i++) {
-//   console.log(`Super Heroes at index ${i} is ${onlySuperHeroes[i]}`);
-// }
-
-let evenNumbers = [4, 6, 8, 10, 2, 12, 14];
-const numbersLessThan10 = evenNumbers.find(function(number) {
-  return number < 10;
-});
-  
-
-console.log(`the number less than 10 is ${numbersLessThan10}`)
-
-
-console.log(`\n --------------------OBJECTS---------------------------------------------------------------`);
-
 /////////OBJECTS
 
 
@@ -66,42 +8,55 @@ const appleInc = {
   specialization: "Consumer Electronics",
   headQuaters: "United State",
   "current CEO": "Tim Cook",
+  mainProducts: ['iphone', 'Macbook', 'ipod'],
+  yearFounded: 1976,
 
-  Founders: {
-    Founder1: "Steve Jobs",
-    Founder2: "Ronald Wayne",
-  }
-   }
-     
+  calcAge: function () {
+    this.age = 2021 - this.yearFounded;
+    return this.age;
+  },
+  
+  
+}
+
+
 
 console.log(appleInc);
  appleInc["headQuaters"] = "Rwanda";
 
-console.log(`editing thw country fro Rwanda to USA`);
+console.log(`editing the country from Rwanda to USA`);
 console.log(appleInc);
 
 delete appleInc.headQuaters
-
 console.log(`Deleting the head quaters`);
 console.log(appleInc);
 
+ console.log(`------- --- --- -display --- ------ ----`);
+
+ console.log(`the company is specialized in ${appleInc.specialization}\n`);
+
+ console.log(`\n ------- --- --- -adding an element --- ------ ----`);
+
+ appleInc.products = "iphone";
+
+ console.log(appleInc);
+
+ console.log(`\n ------- --- --- -diplaying with qoutetion --- ------ ----`);
+ console.log(`the current CEO is  ${appleInc['current CEO']}`);
+
+ console.log(`\n ------- --- --- -Calculating The Company age --- ------ ----`);
+ console.log(appleInc.calcAge());
+ console.log(appleInc.age);
+ 
+console.log(`\n ------- --- ---(push) Adding an element in Array of Object--- ------ ----`);
+
+appleInc.mainProducts.push("ipad");
+appleInc.mainProducts
+
 console.log(`------- --- --- -Looping --- ------ ----`);
-for (var inc in appleInc) {
-   console.log(appleInc[inc]);
- }
-
-console.log(`------- --- --- -display --- ------ ----`);
-
-console.log(`the company is specialized in ${appleInc.specialization}\n`);
-
-console.log(`\n ------- --- --- -adding an element --- ------ ----`);
-
-appleInc.products = "iphone";
-
-console.log(appleInc);
-
-console.log(`\n ------- --- --- -diplaying with qoutetion --- ------ ----`);
-console.log(`the current CEO is  ${appleInc['current CEO']}`);
+ for (var inc in appleInc) {
+    console.log(appleInc[inc]);
+  }
 
 
 
@@ -112,5 +67,4 @@ console.log(`the current CEO is  ${appleInc['current CEO']}`);
 
 
 
-  
 
