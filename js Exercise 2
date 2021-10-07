@@ -1,3 +1,21 @@
+// simple function declaration
+function sayHi(){
+  console.log('Good Mornig Everyone');
+}
+// function calling
+sayHi();
+
+// function expression storing a function in avariable
+
+const lifeSummary = function(){
+  console.log('life is good!');
+}
+lifeSummary();
+
+
+
+
+
 
 /////////OBJECTS
 
@@ -66,31 +84,59 @@ console.log(`\n ------- --- ---displaying the company summary--- ------ ----\n`)
 
 console.log(appleInc.companySummary())
 
-// console.log(`------- --- --- -Looping --- ------ ----`);
-//  for (var inc in appleInc) {
-//     console.log(appleInc[inc]);
-//   }
+
 
 console.log(`\n ------- --- ---(CONCAT) Joining an element in Array of Object--- ------ ----`);
 
 console.log(productNew)
 console.log(specificationsNew)
 
-// const onlySuperHeroes =  marvelSuperHeroes.concat(dcSuperHeroes);
+
 
 const productsAndspecifications = productNew.concat(specificationsNew);
 
- appleInc.productsAndspecifications = productsAndspecifications;
 
+
+ appleInc.productsAndspecifications = productsAndspecifications;
 console.log(appleInc);
 
+// console.log(`\n ------- --- --- -Looping --- ------ ----\n `);
+//  for (var inc in appleInc) {
+//     console.log(appleInc[inc]);
+//   };
+
+console.log(`\n ------- --- --- -Structuring  --- ------ ----\n `);
+
+console.log(productNew)
+
+const [product1, product2, product3, product4, product5  = "iphone 7", product6 = "iphone X"] = productNew;
+ console.log(`\n this mornig I bought two ${product1}, ${product5} and ${product6}\n`);
 
 
+console.log(`\n ------- --- --- -Array rest operator --- ------ ----\n `);
 
+const appleProducts = [["iphone 7", "iphone 8", "iphone X"], "macbook Air", "Macbook pro", "Inpods pro"];
 
+const [appleSmartPhones, ...otherProducts] = appleProducts;
 
+console.log(appleSmartPhones);
+console.log(appleProducts);
 
+console.log(` we only have ${appleSmartPhones} and Other apple product such as ${otherProducts}`);
 
+console.log(`\n ------- --- --- -Object destructuring --- ------ ----\n `);
+
+let productSpecifications = {
+  memory: "4 GB",
+  processor: "i7",
+  year: 2019,
+  storage: "256 GB",
+  MadeIn: "Rwanda",
+}
+
+const {memory, processor, year, storage, MadeIn:country} = productSpecifications;
+console.log(memory);
+console.log(country);
 
 
 
