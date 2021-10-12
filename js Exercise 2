@@ -1,191 +1,439 @@
-console.log('10 functions that do some calculations or statements normal functions and arrow functions,\n \n');
+console.log(`5. a program for a bartender, where he only serves drinks to adults`);
 
-console.log('--------------------simple function declaration---------------------');
-
-// 
-sayHi();
-
-function sayHi(){
-  console.log('Good Mornig Everyone');
-}
-// function calling
-sayHi();
-
-console.log('-------------------- checking if the number is even or not---------------------');
-
-
-// checking if the number is even or not
-isEven(15);
-
-function isEven(number) {
-  return number % 2 == 0;
-}
-
-isEven(30);
-isEven(9);
-
-
-console.log('-------------------- finding the fuctorial number---------------------');
-
-
-//finding the fuctorial number
-function factorial(number) {
-  if (number == 0) {
-    return 1;
-  }
-  return number * factorial( number - 1);
-}
-console.log(factorial(4));
-
-// function expression [ storing a function in avariable ]
-
-console.log('--- function expression [ storing a function in avariable ]----------');
-
-
-//lifeSummary();
-
-const lifeSummary = function(){
-  console.log('life is good!');
-};
-lifeSummary();
-
-// arguments and parameters
-
-console.log('--- arguments and parameters----------');
-
-const lifeSummaryName = function(name = 'mugabe', action = 'learning', subject = 'javascript'){
-  console.log(`${name} is good at ${action} ${subject}`);
-};
-lifeSummaryName();
-lifeSummaryName('Richard', 'studying', 'java');
-
-
-
-console.log('--- function to add two numbers (paremeter of rectangle----------');
-//function to add two numbers (paremeter of rectangle)
-
-function add(lenghth,width){
-  let paremeter1 = (lenghth+width)*2;
-  return paremeter1;
-}
- const resultparemeter = add(4, 9);
-console.log(`The paremeter of a rectangle  is ${resultparemeter}`);
-
-
-console.log('--- calculating the Area of Triangle----------');
-//calculating the Area of Triangle
-
-const triangleArea = function(base, height){
-  let resultArea = 0.5 * base * height;
-  return resultArea;
-}
-const resultArea = triangleArea(4, 8);
-console.log(`The Area of triagle is ${resultArea}`);
-
-console.log('--- displaying the Array element length----------');
-//Array function expression
-const calArrayLength = function(array) {
-  return array.length
-}
-console.log(calArrayLength([2, 5, 7, 8]));
-
-console.log('--- displaying message based on their marks and course----------');
-
-//displaying message based on their marks and course
-
-const result1 = function(name, course, marks) {
-  if (course.toLowerCase() == 'java' && marks > 50 ){
-    return console.log(`Hi ${name} your marks ${marks} approves that you have  passed ${course} `)
-  }else if (course.toLowerCase() == 'java' && marks < 50 ){
-    return console.log(`Hi ${name} your marks ${marks} indicates that you have failed ${course}`)
+function serveDrinks(age, breakSession){
+  if(age > 18 && !breakSession){
+    return true;
   } else {
-    return console.log(`Sorry We don't teach that course`)
-    
+    return false;
+  } 
+};
+serveDrinks(17, true);
+serveDrinks(19, false);
+serveDrinks(30, true);
+
+
+console.log(`1. function that takes a number of wins, draws and losses and calculates the number 
+of points`);
+
+
+function footballPoints(wins,draws,losses) {
+  if(wins >= 0 && draws >= 0 && losses >= 0 ){
+    totalWins = wins * 3;
+    totalDraws = draws * 1;
+    totalLosse = losses * 0;
+    finalResult = totalWins + totalDraws + totalLosse;
+    console.log(finalResult);
+  } else {
+    console.log(`Invalid Input`);
   }
+};
+footballPoints(3, 4, 2);
+footballPoints(5, 0, 2);
+footballPoints(0, 0, 1);
+   
+
+ console.log(`2. function which calculates the amount of fuel it needs, once given the distance.\n`); 
+
+function calculateFuel(distance){
+  if(distance > 0){
+    fuel = distance * 5;
+    if(fuel > 20){
+      console.log(fuel);
+    } else {
+      console.log(`20liters`);
+    }
+  } else {
+    console.log(`Invalid Distance`);
   }
-
-result1("peter", "java", 75);
-result1("peter", "java", 46);
-result1("peter", "python", 46);
-
-
-//pushing an element into an array using short hand method (add & get)
-
-console.log('--- pushing an element into an array using short hand method (add & get)----------');
+};
+calculateFuel(15);
+calculateFuel(20);
+calculateFuel(38);
+calculateFuel(3);
 
 
-const bestMovies = {
-  listMovies: ['John Carter','GOT'],
-  add(...listMovies) {
-    this.listMovies.push(...listMovies);
-  },
-  get(index) {
-    return this.listMovies[index];
+
+console.log(`3. function that checks whether a kid can watch an MA15+ rated movie`);
+
+function acceptIntoCinema(age, isSupervised){
+  if(age >= 15 || isSupervised){
+    return true;
+  }else{
+    return false;
+  }
+};
+acceptIntoCinema(12, true);
+acceptIntoCinema(13, false);
+acceptIntoCinema(16, false);
+
+
+
+console.log(`4. function that takes an array and a string as arguments and return the index of the 
+string. `);
+
+
+function findIndex(array, string){
+  let temp, i;
+  for (i = 0; i < array.length; i++) {
+    if (array[i] !== string) {
+      temp = i;
+    } else {
+      return i;
+    }
   }
 };
 
-bestMovies.add('squid Game');
-console.log(bestMovies.get(1));
-console.log(bestMovies.listMovies);
-
-console.log('--- a function into an object----------');
-
-const appleInc = {
-  
-  companyName: "Apple Inc",
-  specialization: "Consumer Electronics",
-  headQuaters: "United State",
-  "current CEO": "Tim Cook",
-  mainProducts: ["smartphones", "personal computers,", "tablets"],
-  yearFounded: 1976,
-  productSpecifications: ["Memory: 8 GB", "Storage: 256 GB"],
-  
-  companySummary: function () {
-    return `\n ${this.["current CEO"]} is the Current CEO of ${this.companyName} whic is spsecialized in ${this.specialization} \n`
-  },
-
-  calcAge: function () {
-    this.age = 2021 - this.yearFounded;
-    return this.age;
-  },
-  
-  
-}
-console.log(`\n ------- --- --- -Calculating The Company age --- ------ ----`);
-console.log(appleInc.calcAge());
-console.log(appleInc.age);
-
-console.log(appleInc.companySummary())
+findIndex(["hi", "zatecd", "Rwandad", "trainingd"], "Rwandad");
+findIndex(["iPhoned", "iPadd", "iMacd", "MacBook Aird"], "iPadd");
+findIndex(["htmld", "cssd", "javascriptd", "tailwindcssd"], "cssd");
+findIndex(["toyotad", "mercedes benzd", "volkswagend", "maclarend"], "toyotad");
 
 
-console.log('--- a function into an object----------');
 
+console.log(`6. FUNCTION TO RETURN SUM & RANGE`);
 
-// using objects
-const employee = [
-  {
-    emp1: "John",
-    amount: 500,
-    
-  },
-  {
-    emp2: "peter",
-    amount: 350,
-   
-  },
-  {
-    emp3: "mark",
-    amount: 650,
-   
+function sum(number1, number2){
+  if(isNaN(number1) ){
+    console.log(` please make sure [${number1}] is a number`); 
+  } else if(isNaN(number2)){
+    console.log(` please make sure [${number2}] is a number`);
+  } else {
+    let total = number1 + number2;
+    console.log(total);
+    if(total >= 0 && total <= 15){
+      return true;
+    } else {
+      return false;
+    }
   }
-]
+}
 
-const totalSalary = employee
+sum(2,6);
+sum(9, 8);
+sum(7, 'richard');
+sum(4, -3);
 
-.reduce(function (total, employee){
-  return (total + employee.amount);
-}, 0)
-console.log(`the total salary we paid the employees is:  ${totalSalary}`)
+
+console.log(`7. all multiple of 3 numbers in the range 0 - 40.`);
+
+function multipleOfThree1(){
+  let results = '';
+  let i;
+  for(i = 1; i <= 40; i ++ ){
+    if(i % 3 == 0){
+      results += i + ',';
+    }
+  }
+  console.log(`they're ${results}`);
+}
+multipleOfThree1();
+
+console.log(`9. Calculate My age.`);
+
+function calculatAge(yearToDay, BirthYear){
+  if(BirthYear < yearToDay){
+    yourAge = yearToDay - BirthYear;
+    console.log(`You're ${yourAge} Years Old`);
+  } else {
+     console.log(`Your Birthday cannt be from the future`);
+
+  }
+} 
+
+calculatAge(2021, 1999);
+calculatAge(2021, 2025);
+
+console.log(`10. Capitalize the first letter of the word in a string.  `);
+
+function capitalizeThefirstLetter(words) {
+  let separateWord = words.toLowerCase().split(' ');
+  let i;
+  for(i = 0; i <  separateWord.length; i++ ) {
+    separateWord[i] = separateWord[i].charAt(0).toUpperCase() + separateWord[i].substring(1);
+  }
+  return separateWord.join(' ');
+}
+console.log(capitalizeThefirstLetter("have fun"));
+console.log(capitalizeThefirstLetter("THE HARDES DEcision Requires THE STRONGEST WIll"));
+
+
+
+console.log(`8. check if the current number is odd or even`);
+
+function checkOddOrEven(){
+  let i;
+  for (i= 0; i <= 15; i ++) {
+    if( i % 2 == 0) {
+      console.log(`${i} is even`);
+    } else {
+      console.log(`${i} is odd`);
+    }
+  }
+}
+checkOddOrEven();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   if (team1Goals == team2Goals) {
+//      team1FinalScore = team1Score + 1;
+//     team2FinalScore = team2Score + 1;
+//     console.log(`========================= \n Team 1 final score is ${team1FinalScore} \n Team 2 final score is ${team2FinalScore}\n ========================= \n`);
+ 
+    
+    
+//   } else if (team1Goals > team2Goals){
+//     team1FinalScore = team1Score + 3;
+//     team2FinalScore = team2Score + 0;
+//     console.log(`========================= \n Team 1 final score is ${team1FinalScore} \n Team 2 final score is ${team2FinalScore}\n ========================= \n`);
+    
+//   }
+//   else {
+//     team1FinalScore = team1Score + 3;
+//     team1FinalScore = team1Score + 3;
+//     console.log(`========================= \n Team 1 final score is ${team1FinalScore} \n Team 2 final score is ${team2FinalScore}\n ========================= \n`);
+  
+// }
+  
+// };
+
+
+
+
+
+
+// function Points(team1Goals, team2Goals) {
+//   if (team1Goals == team2Goals) {
+//     team1Points = 1;
+//     team2Points =1;
+//     console.log(`team1 has scored 3 ${team1Points}`)
+//   }
+  
+// }
+
+// console.log(Points(1, 1));
+
+
+
+
+
+// //finding the fuctorial number
+// function factorial(number) {
+//   if (number == 0) {
+//     return 1;
+//   }
+//   return number * factorial( number - 1);
+// }
+// console.log(factorial(4));
+
+
+
+
+
+
+// console.log('10 functions that do some calculations or statements normal functions and arrow functions,\n \n');
+
+// console.log('--------------------simple function declaration---------------------');
+
+// // 
+// sayHi();
+
+// function sayHi(){
+//   console.log('Good Mornig Everyone');
+// }
+// // function calling
+// sayHi();
+
+// console.log('-------------------- checking if the number is even or not---------------------');
+
+
+// // checking if the number is even or not
+// isEven(15);
+
+// function isEven(number) {
+//   return number % 2 == 0;
+// }
+
+// isEven(30);
+// isEven(9);
+
+
+// console.log('-------------------- finding the fuctorial number---------------------');
+
+
+// //finding the fuctorial number
+// function factorial(number) {
+//   if (number == 0) {
+//     return 1;
+//   }
+//   return number * factorial( number - 1);
+// }
+// console.log(factorial(4));
+
+// // function expression [ storing a function in avariable ]
+
+// console.log('--- function expression [ storing a function in avariable ]----------');
+
+
+// //lifeSummary();
+
+// const lifeSummary = function(){
+//   console.log('life is good!');
+// };
+// lifeSummary();
+
+// // arguments and parameters
+
+// console.log('--- arguments and parameters----------');
+
+// const lifeSummaryName = function(name = 'mugabe', action = 'learning', subject = 'javascript'){
+//   console.log(`${name} is good at ${action} ${subject}`);
+// };
+// lifeSummaryName();
+// lifeSummaryName('Richard', 'studying', 'java');
+
+
+
+// console.log('--- function to add two numbers (paremeter of rectangle----------');
+// //function to add two numbers (paremeter of rectangle)
+
+// function add(lenghth,width){
+//   let paremeter1 = (lenghth+width)*2;
+//   return paremeter1;
+// }
+//  const resultparemeter = add(4, 9);
+// console.log(`The paremeter of a rectangle  is ${resultparemeter}`);
+
+
+// console.log('--- calculating the Area of Triangle----------');
+// //calculating the Area of Triangle
+
+// const triangleArea = function(base, height){
+//   let resultArea = 0.5 * base * height;
+//   return resultArea;
+// }
+// const resultArea = triangleArea(4, 8);
+// console.log(`The Area of triagle is ${resultArea}`);
+
+// console.log('--- displaying the Array element length----------');
+// //Array function expression
+// const calArrayLength = function(array) {
+//   return array.length
+// }
+// console.log(calArrayLength([2, 5, 7, 8]));
+
+// console.log('--- displaying message based on their marks and course----------');
+
+// //displaying message based on their marks and course
+
+// const result1 = function(name, course, marks) {
+//   if (course.toLowerCase() == 'java' && marks > 50 ){
+//     return console.log(`Hi ${name} your marks ${marks} approves that you have  passed ${course} `)
+//   }else if (course.toLowerCase() == 'java' && marks < 50 ){
+//     return console.log(`Hi ${name} your marks ${marks} indicates that you have failed ${course}`)
+//   } else {
+//     return console.log(`Sorry We don't teach that course`)
+    
+//   }
+//   }
+
+// result1("peter", "java", 75);
+// result1("peter", "java", 46);
+// result1("peter", "python", 46);
+
+
+// //pushing an element into an array using short hand method (add & get)
+
+// console.log('--- pushing an element into an array using short hand method (add & get)----------');
+
+
+// const bestMovies = {
+//   listMovies: ['John Carter','GOT'],
+//   add(...listMovies) {
+//     this.listMovies.push(...listMovies);
+//   },
+//   get(index) {
+//     return this.listMovies[index];
+//   }
+// };
+
+// bestMovies.add('squid Game');
+// console.log(bestMovies.get(1));
+// console.log(bestMovies.listMovies);
+
+// console.log('--- a function into an object----------');
+
+// const appleInc = {
+  
+//   companyName: "Apple Inc",
+//   specialization: "Consumer Electronics",
+//   headQuaters: "United State",
+//   "current CEO": "Tim Cook",
+//   mainProducts: ["smartphones", "personal computers,", "tablets"],
+//   yearFounded: 1976,
+//   productSpecifications: ["Memory: 8 GB", "Storage: 256 GB"],
+  
+//   companySummary: function () {
+//     return `\n ${this.["current CEO"]} is the Current CEO of ${this.companyName} whic is spsecialized in ${this.specialization} \n`
+//   },
+
+//   calcAge: function () {
+//     this.age = 2021 - this.yearFounded;
+//     return this.age;
+//   },
+  
+  
+// }
+// console.log(`\n ------- --- --- -Calculating The Company age --- ------ ----`);
+// console.log(appleInc.calcAge());
+// console.log(appleInc.age);
+
+// console.log(appleInc.companySummary())
+
+
+// console.log('--- a function into an object----------');
+
+
+// // using objects
+// const employee = [
+//   {
+//     emp1: "John",
+//     amount: 500,
+    
+//   },
+//   {
+//     emp2: "peter",
+//     amount: 350,
+   
+//   },
+//   {
+//     emp3: "mark",
+//     amount: 650,
+   
+//   }
+// ]
+
+// const totalSalary = employee
+
+// .reduce(function (total, employee){
+//   return (total + employee.amount);
+// }, 0)
+// console.log(`the total salary we paid the employees is:  ${totalSalary}`)
 
 
 
@@ -205,246 +453,246 @@ console.log(`the total salary we paid the employees is:  ${totalSalary}`)
 
 
 
-//Arrow Functions
+// //Arrow Functions
 
-hello = () => "Good Mornig Everyone";
+// hello = () => "Good Mornig Everyone";
 
-//Finding the even numbers
-const isEven2 = (number) => number % 2 == 0;
+// //Finding the even numbers
+// const isEven2 = (number) => number % 2 == 0;
 
-isEven(4)
-isEven(5)
+// isEven(4)
+// isEven(5)
 
-//Finding the factorial
+// //Finding the factorial
 
 
-const factorial2 = (number) => {
-  if (number == 0) {
-    return 1;
-  }
-    return number * factorial( number - 1);
-}
-
-console.log(factorial2(4));
-
-  
-
-const paremeter2 = (length, width) => 2 * (length + width);
-const resultparemeter2 = paremeter2(5, 4);
-console.log(`The paremeter 2 of rectangle is ${resultparemeter2}`);
-
-
-
-const triangleArea2 = (base, height) => 0.5 * base * height;
-
-const resultArea2 = triangleArea2(2, 3);
-console.log(`The Area of triagle is ${resultArea2}`);
-
-// Arrow Function Using Array [callback and  foreach functions]
-
-let movies = ['John Carter','GOT', 'Spider-Man','Iron-Man'];
-const myMovies = (movie, index) => {
-  console.log(`at index ${index} - the movie is ${movie}`)
-}
-movies.forEach(myMovies);
-
-
-
-//multiple parameters checking if the user has paased java or not
-const result = (name, course, marks) => {
-  if (course.toLowerCase() == 'java' && marks > 50 ){
-    return console.log(`Hi ${name} your marks ${marks} approves that you have  passed ${course} `)
-  } else {
-    return console.log(`Hi ${name} your marks ${marks} indicates that you have failed ${course}`)
-  }
-}
-result("peter", "java", 70);
-result("Juma", "java", 40);
-
-
-///function using objects
-
-
-const employee2 = [
-  {
-    emp1: "John",
-    amount: 500,
-    
-  },
-  {
-    emp2: "peter",
-    amount: 350,
-   
-  },
-  {
-    emp3: "mark",
-    amount: 340,
-   
-  }
-]
-
-const totalSalary2 = employee2
-
-.reduce((total, i) => total + i.amount, 0)
-
-console.log(`the total salary we paid the employees is:  ${totalSalary2}`)
-
-
-
-
-
-
-
-
-
-
-
-
-/////////OBJECTS
-
-
-
- 
- 
-
-
-
-
-// console.log(appleInc);
-//  appleInc["headQuaters"] = "Rwanda";
-
-// console.log(`editing the country from Rwanda to USA`);
-// console.log(appleInc);
-
-// delete appleInc.headQuaters
-// console.log(`Deleting the head quaters`);
-// console.log(appleInc);
-
-//  console.log(`------- --- --- -display --- ------ ----`);
-
-//  console.log(`the company is specialized in ${appleInc.specialization}\n`);
-
-//  console.log(`\n ------- --- --- -adding an element --- ------ ----`);
-
-//  appleInc.products = "iphone";
-
-//  console.log(appleInc);
-
-//  console.log(`\n ------- --- --- -diplaying with qoutetion --- ------ ----`);
-//  console.log(`the current CEO is  ${appleInc['current CEO']}`);
-
-//  console.log(`\n ------- --- --- -Calculating The Company age --- ------ ----`);
-//  console.log(appleInc.calcAge());
-//  console.log(appleInc.age);
- 
-// console.log(`\n ------- --- ---(push) Adding an element in Array of Object--- ------ ----`);
-
-// appleInc.mainProducts.push("ipad");
-// appleInc.mainProducts
-// const productNew = appleInc.mainProducts;
-// const specificationsNew = appleInc.productSpecifications;
-
-
-
-// console.log(`\n ------- --- ---displaying the company summary--- ------ ----\n`);
-
-// console.log(appleInc.companySummary())
-
-
-
-// console.log(`\n ------- --- ---(CONCAT) Joining an element in Array of Object--- ------ ----`);
-
-// console.log(productNew)
-// console.log(specificationsNew)
-
-
-
-// const productsAndspecifications = productNew.concat(specificationsNew);
-
-
-
-//  appleInc.productsAndspecifications = productsAndspecifications;
-// console.log(appleInc);
-
-// // console.log(`\n ------- --- --- -Looping --- ------ ----\n `);
-// //  for (var inc in appleInc) {
-// //     console.log(appleInc[inc]);
-// //   };
-
-// console.log(`\n ------- --- --- -Structuring  --- ------ ----\n `);
-
-// console.log(productNew)
-
-// const [product1, product2, product3, product4, product5  = "iphone 7", product6 = "iphone X"] = productNew;
-//  console.log(`\n this mornig I bought two ${product1}, ${product5} and ${product6}\n`);
-
-
-// console.log(`\n ------- --- --- -Array rest operator --- ------ ----\n `);
-
-// const appleProducts = [["iphone 7", "iphone 8", "iphone X"], "macbook Air", "Macbook pro", "Inpods pro"];
-
-// const [appleSmartPhones, ...otherProducts] = appleProducts;
-
-// console.log(appleSmartPhones);
-// console.log(appleProducts);
-
-// console.log(` we only have ${appleSmartPhones} and Other apple product such as ${otherProducts}`);
-
-// console.log(`\n ------- --- --- -Object destructuring --- ------ ----\n `);
-
-// let productSpecifications = {
-//   memory: "4 GB",
-//   processor: "i7",
-//   year: 2019,
-//   storage: "256 GB",
-//   MadeIn: "Rwanda",
+// const factorial2 = (number) => {
+//   if (number == 0) {
+//     return 1;
+//   }
+//     return number * factorial( number - 1);
 // }
 
-// const {memory, processor, year, storage, MadeIn:country} = productSpecifications;
-// console.log(memory);
-// console.log(country);
+// console.log(factorial2(4));
 
-const menuItems = [
-  {name: "rice", price: 50, description: "Fried with coconout oil"},
-  {name: "pasta", price: 35, description: "With red, chilli tomato sauce"},
-  {name: "sushi", price: 45, description: "Sushi with raw salmon fish"},
-];
+  
 
-const calculateAddition = (food, quantity, customer="Guest") => {
-  const menuItem = menuItems.find(item => item.name == food);
-  const {name, price, description } = menuItem;
-  
-  //initializing our variable
-  let totalCost = 0;
-  let tip = 0;
-  let totalBill = 0;
-  let VAT_PERCENTAGE = 0.17;
-  
-  totalCost = price * quantity;
-  
-  if (totalCost <= 200) {
-    tip = totalCost * 0.15;
-  } else {
-    tip = totalCost * 0.20;
-  }
-  
-  totalBill = totalCost + tip;
-  
-  totalBill += totalBill * VAT_PERCENTAGE;
-  
-  //totalBill = totalBill + (totalBill * VAT_PERCENTAGE);
-  
-  printBill(customer, totalCost, tip, totalBill)
-  
-}
+// const paremeter2 = (length, width) => 2 * (length + width);
+// const resultparemeter2 = paremeter2(5, 4);
+// console.log(`The paremeter 2 of rectangle is ${resultparemeter2}`);
 
-function printBill(customer, totalCost, tip, totalBill) {
-  console.log(`=====================\nThank you ${customer} for visiting us. \nTotal cost: $ ${totalCost} \nGratuity: $ ${tip}. \nTotal Payable Amount (VAT 17%): $ ${totalBill}`);
-}
 
-calculateAddition("rice", 2, "Manzi");
-calculateAddition("rice", 2, "Sandrine");
-calculateAddition("rice", 2, "Sandrine Two");
+
+// const triangleArea2 = (base, height) => 0.5 * base * height;
+
+// const resultArea2 = triangleArea2(2, 3);
+// console.log(`The Area of triagle is ${resultArea2}`);
+
+// // Arrow Function Using Array [callback and  foreach functions]
+
+// let movies = ['John Carter','GOT', 'Spider-Man','Iron-Man'];
+// const myMovies = (movie, index) => {
+//   console.log(`at index ${index} - the movie is ${movie}`)
+// }
+// movies.forEach(myMovies);
+
+
+
+// //multiple parameters checking if the user has paased java or not
+// const result = (name, course, marks) => {
+//   if (course.toLowerCase() == 'java' && marks > 50 ){
+//     return console.log(`Hi ${name} your marks ${marks} approves that you have  passed ${course} `)
+//   } else {
+//     return console.log(`Hi ${name} your marks ${marks} indicates that you have failed ${course}`)
+//   }
+// }
+// result("peter", "java", 70);
+// result("Juma", "java", 40);
+
+
+// ///function using objects
+
+
+// const employee2 = [
+//   {
+//     emp1: "John",
+//     amount: 500,
+    
+//   },
+//   {
+//     emp2: "peter",
+//     amount: 350,
+   
+//   },
+//   {
+//     emp3: "mark",
+//     amount: 340,
+   
+//   }
+// ]
+
+// const totalSalary2 = employee2
+
+// .reduce((total, i) => total + i.amount, 0)
+
+// console.log(`the total salary we paid the employees is:  ${totalSalary2}`)
+
+
+
+
+
+
+
+
+
+
+
+
+// /////////OBJECTS
+
+
+
+ 
+ 
+
+
+
+
+// // console.log(appleInc);
+// //  appleInc["headQuaters"] = "Rwanda";
+
+// // console.log(`editing the country from Rwanda to USA`);
+// // console.log(appleInc);
+
+// // delete appleInc.headQuaters
+// // console.log(`Deleting the head quaters`);
+// // console.log(appleInc);
+
+// //  console.log(`------- --- --- -display --- ------ ----`);
+
+// //  console.log(`the company is specialized in ${appleInc.specialization}\n`);
+
+// //  console.log(`\n ------- --- --- -adding an element --- ------ ----`);
+
+// //  appleInc.products = "iphone";
+
+// //  console.log(appleInc);
+
+// //  console.log(`\n ------- --- --- -diplaying with qoutetion --- ------ ----`);
+// //  console.log(`the current CEO is  ${appleInc['current CEO']}`);
+
+// //  console.log(`\n ------- --- --- -Calculating The Company age --- ------ ----`);
+// //  console.log(appleInc.calcAge());
+// //  console.log(appleInc.age);
+ 
+// // console.log(`\n ------- --- ---(push) Adding an element in Array of Object--- ------ ----`);
+
+// // appleInc.mainProducts.push("ipad");
+// // appleInc.mainProducts
+// // const productNew = appleInc.mainProducts;
+// // const specificationsNew = appleInc.productSpecifications;
+
+
+
+// // console.log(`\n ------- --- ---displaying the company summary--- ------ ----\n`);
+
+// // console.log(appleInc.companySummary())
+
+
+
+// // console.log(`\n ------- --- ---(CONCAT) Joining an element in Array of Object--- ------ ----`);
+
+// // console.log(productNew)
+// // console.log(specificationsNew)
+
+
+
+// // const productsAndspecifications = productNew.concat(specificationsNew);
+
+
+
+// //  appleInc.productsAndspecifications = productsAndspecifications;
+// // console.log(appleInc);
+
+// // // console.log(`\n ------- --- --- -Looping --- ------ ----\n `);
+// // //  for (var inc in appleInc) {
+// // //     console.log(appleInc[inc]);
+// // //   };
+
+// // console.log(`\n ------- --- --- -Structuring  --- ------ ----\n `);
+
+// // console.log(productNew)
+
+// // const [product1, product2, product3, product4, product5  = "iphone 7", product6 = "iphone X"] = productNew;
+// //  console.log(`\n this mornig I bought two ${product1}, ${product5} and ${product6}\n`);
+
+
+// // console.log(`\n ------- --- --- -Array rest operator --- ------ ----\n `);
+
+// // const appleProducts = [["iphone 7", "iphone 8", "iphone X"], "macbook Air", "Macbook pro", "Inpods pro"];
+
+// // const [appleSmartPhones, ...otherProducts] = appleProducts;
+
+// // console.log(appleSmartPhones);
+// // console.log(appleProducts);
+
+// // console.log(` we only have ${appleSmartPhones} and Other apple product such as ${otherProducts}`);
+
+// // console.log(`\n ------- --- --- -Object destructuring --- ------ ----\n `);
+
+// // let productSpecifications = {
+// //   memory: "4 GB",
+// //   processor: "i7",
+// //   year: 2019,
+// //   storage: "256 GB",
+// //   MadeIn: "Rwanda",
+// // }
+
+// // const {memory, processor, year, storage, MadeIn:country} = productSpecifications;
+// // console.log(memory);
+// // console.log(country);
+
+// const menuItems = [
+//   {name: "rice", price: 50, description: "Fried with coconout oil"},
+//   {name: "pasta", price: 35, description: "With red, chilli tomato sauce"},
+//   {name: "sushi", price: 45, description: "Sushi with raw salmon fish"},
+// ];
+
+// const calculateAddition = (food, quantity, customer="Guest") => {
+//   const menuItem = menuItems.find(item => item.name == food);
+//   const {name, price, description } = menuItem;
+  
+//   //initializing our variable
+//   let totalCost = 0;
+//   let tip = 0;
+//   let totalBill = 0;
+//   let VAT_PERCENTAGE = 0.17;
+  
+//   totalCost = price * quantity;
+  
+//   if (totalCost <= 200) {
+//     tip = totalCost * 0.15;
+//   } else {
+//     tip = totalCost * 0.20;
+//   }
+  
+//   totalBill = totalCost + tip;
+  
+//   totalBill += totalBill * VAT_PERCENTAGE;
+  
+//   //totalBill = totalBill + (totalBill * VAT_PERCENTAGE);
+  
+//   printBill(customer, totalCost, tip, totalBill)
+  
+// }
+
+// function printBill(customer, totalCost, tip, totalBill) {
+//   console.log(`=====================\nThank you ${customer} for visiting us. \nTotal cost: $ ${totalCost} \nGratuity: $ ${tip}. \nTotal Payable Amount (VAT 17%): $ ${totalBill}`);
+// }
+
+// calculateAddition("rice", 2, "Manzi");
+// calculateAddition("rice", 2, "Sandrine");
+// calculateAddition("rice", 2, "Sandrine Two");
 
 
 
