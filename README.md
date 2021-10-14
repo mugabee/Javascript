@@ -77,8 +77,13 @@
            Hint: You can use Date 
         10. Capitalize the first letter of the word in a string. 
             - have fun => Have Fun 
+# Exercise 5:
 
- 
+        Create functionalities that do DOM manipulation (adding, removing elements)
+        Create functionalities that do Event handling (see list of most used events and more you can come up with)
+        
+        
+
  
  
  
